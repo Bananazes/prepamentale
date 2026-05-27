@@ -25,7 +25,7 @@
   <meta property="og:image" content="https://www.dominiquewils.fr/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Dominique Wils, préparateur mental" />
+  <meta property="og:image:alt" content="Dominique Wils, préparation mentale" />
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -288,9 +288,10 @@
         padding-bottom: 16px;
       }
 
-      /* Hero : éviter la largeur fixe et l'oversize du padding */
-      .hero { min-height: 560px; }
-      .hero-content { padding: 0 24px 60px; max-width: 100%; }
+      /* Hero : éviter la largeur fixe et l'oversize du padding,
+         et centrer verticalement le contenu (plutôt que coller en bas comme en desktop) */
+      .hero { min-height: 560px; align-items: center; }
+      .hero-content { padding: 0 24px; max-width: 100%; }
       .hero-img { background-position: left 35%; }
       .hero-sub { width: auto !important; max-width: 100%; font-size: 15px; }
       .hero-actions { flex-wrap: wrap; }
@@ -298,10 +299,14 @@
       /* Accroche */
       #accroche { padding-top: 60px; padding-bottom: 48px; }
 
-      /* Pour qui : grille bénéfices en une colonne, audience-grid sans bordure droite résiduelle */
+      /* Pour qui : grille bénéfices en une colonne, audience-grid empilée proprement
+         (les cartes sont séparées par UNE bordure entre chacune, pas une au-dessus de chaque) */
       .benefices-list { grid-template-columns: 1fr; gap: 14px; }
-      .audience-card { border-right: none; }
-      .audience-card + .audience-card { padding-left: 0; }
+      .audience-card { border-right: none; padding: 22px 0; }
+      .audience-card + .audience-card {
+        padding-left: 0;
+        border-top: 1px solid var(--rule);
+      }
 
       /* Méthode : les étapes deviennent verticales */
       .step { flex-direction: column; gap: 10px; padding: 22px 0; }
@@ -676,7 +681,7 @@
     <div class="section-label reveal" style="margin-bottom: 28px;">Ce que vous développerez</div>
     <div class="benefices-list" style="margin-top: 0;">
       <div class="benefice-item reveal reveal-delay-1">
-        <div class="benefice-text">Mieux gérer le stress, la pression, les imprévus et les enjeux</div>
+        <div class="benefice-text">Améliorer la gestion du stress, de la pression, des imprévus et des enjeux</div>
       </div>
       <div class="benefice-item reveal reveal-delay-2">
         <div class="benefice-text">Développer une confiance durable, une motivation solide et une concentration de qualité</div>
@@ -693,16 +698,16 @@
   <!-- Autres publics -->
   <div class="reveal" style="margin-top: 52px; padding-top: 32px; border-top: 1px solid var(--rule);">
     <div class="section-label" style="margin-bottom: 20px;">Également pour</div>
-    <div class="audience-grid" style="margin-top: 0; border-top: none;">
-      <div class="audience-card reveal reveal-delay-1" style="border-top: 1px solid var(--rule);">
+    <div class="audience-grid" style="margin-top: 0;">
+      <div class="audience-card reveal reveal-delay-1">
         <div class="audience-card-title">Étudiants</div>
         <div class="audience-card-body">Examens, concours, oraux — gérer la pression des grands moments et performer quand ça compte.</div>
       </div>
-      <div class="audience-card reveal reveal-delay-2" style="border-top: 1px solid var(--rule);">
+      <div class="audience-card reveal reveal-delay-2">
         <div class="audience-card-title">Dirigeants & cadres</div>
         <div class="audience-card-body">Performance, communication, prise de décision sous pression, surcharge mentale.</div>
       </div>
-      <div class="audience-card reveal reveal-delay-3" style="border-top: 1px solid var(--rule);">
+      <div class="audience-card reveal reveal-delay-3">
         <div class="audience-card-title">Artistes & orateurs</div>
         <div class="audience-card-body">Trac, exposition publique, gestion des hauts et bas émotionnels liés à la création et à la performance.</div>
       </div>
@@ -724,22 +729,18 @@
     <div class="step reveal">
       <div class="step-title">Premier rendez-vous</div>
       <div class="step-body">Évaluation de vos attentes et élaboration d'une proposition personnalisée.</div>
-      <div class="step-tag">Évaluation</div>
     </div>
     <div class="step reveal reveal-delay-1">
       <div class="step-title">Devis personnalisé</div>
       <div class="step-body">Rédaction d'un devis adapté à votre situation, vos objectifs.</div>
-      <div class="step-tag">Sur mesure</div>
     </div>
     <div class="step reveal reveal-delay-2">
       <div class="step-title">Séances individuelles</div>
       <div class="step-body">Accompagnement sur-mesure, de 45 min à 1h15 par séance. De 1 à 10 séances selon votre programme.</div>
-      <div class="step-tag">Individuel</div>
     </div>
     <div class="step reveal reveal-delay-3">
       <div class="step-title">Séances collectives</div>
       <div class="step-body">Initiation ou sensibilisation. De 10 à 12 personnes.</div>
-      <div class="step-tag">Collectif</div>
     </div>
   </div>
 </section>
@@ -805,7 +806,7 @@ Mon approche repose sur une écoute attentive et des techniques adaptées pour d
 
 <!-- FOOTER -->
 <footer>
-  <span class="footer-copy">© 2026 Dominique Wils — Préparation mentale</span>
+  <span class="footer-copy">© 2026 Dominique Wils — Préparateur mental</span>
   <div class="footer-links">
     <a href="mailto:d.wils@orange.fr">d.wils@orange.fr</a>
     <a href="mentions-legales.html">Mentions légales</a>
