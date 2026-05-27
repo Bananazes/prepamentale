@@ -248,7 +248,7 @@
     @media (max-width: 768px) {
       /* Espacement général */
       section { padding: 60px 24px; }
-      nav { padding: 0 16px 0 24px; }
+      nav { padding: 0 16px 0 24px; height: 50px; }
 
       /* Nav : afficher le hamburger, transformer les liens en panneau déroulant */
       .nav-logo {
@@ -258,10 +258,11 @@
         text-overflow: ellipsis;
         white-space: nowrap;
       }
-      .nav-toggle { display: block; }
+      .nav-toggle { display: block; padding: 8px; }
+      .nav-toggle span { width: 22px; margin: 4px 0; }
       .nav-links {
         position: fixed;
-        top: 60px; left: 0; right: 0;
+        top: 50px; left: 0; right: 0;
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -272,7 +273,7 @@
         border-bottom: 1px solid var(--rule);
         transform: translateY(-120%);
         transition: transform 0.3s ease;
-        max-height: calc(100vh - 60px);
+        max-height: calc(100vh - 50px);
         overflow-y: auto;
       }
       .nav-links.open { transform: translateY(0); }
