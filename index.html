@@ -553,7 +553,21 @@
          et centrer verticalement le contenu (plutôt que coller en bas comme en desktop) */
       .hero { min-height: 560px; align-items: center; }
       .hero-content { padding: 0 24px; max-width: 100%; }
-      .hero-img { background-position: left 35%; }
+      /* Image de fond : filtres allégés sur mobile pour rester visible en plein soleil */
+      .hero-img {
+        background-position: left 35%;
+        filter: blur(1px) brightness(0.7) grayscale(0.2);
+      }
+      /* Dégradé d'assombrissement adouci pour ne pas étouffer l'image,
+         tout en gardant un fond sombre derrière le texte (centré sur mobile) */
+      .hero-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(10,10,10,0.55) 0%,
+          rgba(10,10,10,0.45) 50%,
+          rgba(10,10,10,0.25) 100%
+        );
+      }
       .hero-sub { width: auto !important; max-width: 100%; font-size: 15px; }
       .hero-actions { flex-wrap: wrap; }
 
